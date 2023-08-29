@@ -1,0 +1,84 @@
+﻿@model OnlineExamProject.Models.Question
+
+
+<h1>C# Questions</h1>
+
+<h4 style="text-align:end"><a asp-action="DisplayCSharp" asp-controller="Admin">All Question and Answers</a></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdminPage" ,asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>Welcome  @ViewBag.DisplayName</label>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="QuestionText" class="control-label"></label>
+                <input asp-for="QuestionText" class="form-control" />
+                <span asp-validation-for="QuestionText" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="OptionText1" class="control-label"></label>
+                <textarea asp-for="OptionText1" class="form-control"></textarea>
+              
+                <span asp-validation-for="OptionText1" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="OptionText2" class="control-label"></label>
+                <textarea asp-for="OptionText2" class="form-control"></textarea>
+
+                <span asp-validation-for="OptionText2" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="OptionText3" class="control-label"></label>
+                <textarea asp-for="OptionText3" class="form-control"></textarea>
+
+                <span asp-validation-for="OptionText3" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="OptionText4" class="control-label"></label>
+                <textarea asp-for="OptionText4" class="form-control"></textarea>
+
+                <span asp-validation-for="OptionText4" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="CorrectOption" class="control-label"></label>
+                <input type="text" asp-for="CorrectOption" class="form-control" />
+
+                <span asp-validation-for="CorrectOption" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Login" asp-controller="Login">Back</a>
+</div>
+@if (ViewBag != null)
+{
+    <label class="text-danger">@ViewBag.error</label>
+}

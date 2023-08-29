@@ -1,0 +1,42 @@
+﻿@model IEnumerable<OnlineExamProject.Models.SQLModel>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+
+
+<body>
+    <form asp-action="DisplaySQL" asp-controller="Admin">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Questions</th>
+                <th>Option1</th>
+                <th>Option2</th>
+                <th>Option3</th>
+                <th>CorrectOption</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SQLModelId</td>
+                    <td>@item.QuestionText</td>
+                    <td>@item.OptionText1</td>
+                    <td>@item.OptionText2</td>
+                    <td>@item.OptionText3</td>
+                    <td>@item.OptionText4</td>
+                    <td>@item.CorrectOption</td>
+                    <td>
+                        <a asp-action="UpdateSQL" asp-route-id="@item.SQLModelId">Update</a>
+                    </td>
+
+                </tr>
+            }
+        </table>
+    </form>
+</body>
+
+</html>
